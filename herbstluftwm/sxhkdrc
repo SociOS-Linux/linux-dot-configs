@@ -1,0 +1,143 @@
+#######################################################
+## locate: ${XDG_CONFIG_HOME}/herbstluftwm/sxhkdrc   ##
+## author: Vincent (github.com/mother-1)             ##
+## detail: keybinding(s) for `herbstluftwm'          ##
+## notice: spawned and killed from "xinitrc" file    ##
+#######################################################
+
+###############################
+## Internal (herbstluftwm):  ##
+###############################
+
+#+ quit herbstluftwm
+mod1 + {_,shift +} q
+    herbstclient {reload,chain - emit_hook quit_panel - quit}
+
+#+ rotate tag layout
+mod1 + c
+    herbstclient rotate
+
+#+ cycle frame layout
+mod1 + {_,shift +} t
+    herbstclient cycle_layout {+,-}1 max grid horizontal vertical
+
+#+ manually split frame at left or right
+mod1 + {minus,equal}
+    herbstclient split {left,right} 0.5
+
+#+ manually split frame at top or bottom
+mod1 + shift + {equal,minus}
+    herbstclient split {top,bottom} 0.5
+
+#+ automatically split, and/or shift window to new split (if available)
+mod1 + {_,shift +} BackSpace
+    herbstclient split {explode,auto}
+
+#+ shift window focus next/previous within a frame
+mod1 + {_,shift +} space
+    herbstclient cycle {+,-}1
+
+#+ shift window focus next/previous within a tag
+mod1 + {_,shift +} Tab
+    herbstclient cycle_all --skip-invisible {-,+}1
+
+#+ resize window in direction
+mod1 + r : {h,shift + h,j,shift + j,k,shift + k,l,shift + l}
+    herbstclient resize {left +,left -,down +,down -,up +,up -,right +,right -}0.01
+
+#+ shift focus or window in frame direction
+mod1 + {_,shift +} {h,j,k,l}
+    herbstclient {focus,shift} -e {left,down,up,right}
+
+#+ shift focus to next/prev tag occupied with client
+mod1 + {n,p}
+    /home/conf-h/herbstluftwm/scripts/tagswitch.sh {next,prev}
+
+#+ shift focus or window to next/prev tag
+mod1 + {_,shift +} {period,comma}
+    herbstclient {use,move}_index {+,-}1 --skip-visible
+
+#+ shift focus between last tag(s)
+mod1 + slash
+    herbstclient use_previous
+
+#+ focus or pull urgent window
+mod1 + {_,shift +} u
+    herbstclient {jumpto,bring} urgent
+
+#+ close focused window {and remove frame}
+mod1 + {shift,control} + Next
+    herbstclient {close,close_and_remove}
+
+#+ remove frame
+mod1 + z
+    herbstclient remove
+
+#+ fullscreen client toggle
+mod1 + o
+    herbstclient {fullscreen} toggle
+
+#+ pseudotile, float/unfloat client toggle
+mod1 + {_,shift +} f
+    herbstclient {pseudotile,floating} toggle
+
+########################
+## External:          ##
+########################
+
+#+ reload sxhkd config
+mod1 + shift + s
+    pkill -USR1 -x sxhkd
+
+#+ spawn rxvt-unicode with tmux
+mod1 + Return
+    st -e tmux
+
+#+ spawn rxvt-unicode
+mod1 + shift + Return
+    st
+
+#+ application/window menu
+mod1 + {e,g}
+    rofi -show {run,window}
+
+#+ if found focus on existing browser instance else execute (secondary)
+mod1 + w
+    /bin/zsh -c 'if [[ -n $(pidof palemoon) ]] ; then if [[ ${(Q)$(herbstclient stack)[7]} != "IV" ]] ; then herbstclient use IV ; fi ; else exec palemoon ; fi'
+
+mod1 + shift + w
+    /bin/zsh -c 'if [[ -n $(pidof icecat) ]] ; then if [[ ${(Q)$(herbstclient stack)[7]} != "IV" ]] ; then herbstclient use IV ; fi ; else exec icecat ; fi'
+
+#+ rotation of primary/clipboard selections
+mod1 + y
+    /home/base-h/code/sh/clipswap
+
+#+ yank image snapshot of current tag
+mod1 + shift + y
+    import -window root /home/base-h/foto/shot/$(date '+%Y_%m_%d-%H%M%S').png
+
+#+ custom script to disable/enable/hide/unhide the touchpad/mouse
+mod1 + Escape
+    /usr/local/bin/zaprat --toggle
+
+#+ mute/unmute pulseaudio volume within ALSA
+XF86AudioMute
+    amixer -c 1 -q -D pulse sset Master toggle
+
+#+ raise pulseaudio volume within ALSA
+XF86AudioRaiseVolume
+    amixer -c 1 -q -D pulse sset Master 10%+
+
+#+ lower pulseaudio volume within ALSA
+XF86AudioLowerVolume
+    amixer -c 1 -q -D pulse sset Master 10%-
+
+#+ custom script for screen brightness
+XF86MonBrightnessUp
+    /usr/local/bin/lux -a 25 &> /dev/null
+
+#+ custom script for screen brightness
+XF86MonBrightnessDown
+    /usr/local/bin/lux -s 25 &> /dev/null
+
+# vim: set ft=sxhkdrc:
