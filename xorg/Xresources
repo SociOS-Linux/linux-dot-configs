@@ -1,0 +1,82 @@
+!#############################################!
+!# locate: ${XDG_CONFIG_HOME}/xorg/Xdefaults #!
+!# author: Vincent (github.com/mother-1)     #!
+!# detail: X.Org and X terminal parameters   #!
+!# notice: `st' does not use this by default #!
+!#############################################!
+
+!! urxvt general settings:
+urxvt*termName: rxvt-256color
+urxvt*loginShell: true
+urxvt*scrollBar: false
+urxvt*secondaryScroll: true
+urxvt*scrollTtyKeypress: true
+urxvt*scrollWithBuffer: true
+urxvt*scrollTtyOutput: false
+urxvt*saveLines: 8192
+urxvt*borderLess: false
+urxvt*transparent: false
+urxvt*shading: 0
+urxvt*fading: 50
+urxvt.cursorBlink: 0
+urxvt.cursorUnderline: 0
+!urxvt*visualBell: true
+!urxvt*urgentOnBell :true
+
+!! urxvt fonts:
+!! Tier S:
+urxvt*.font: xft:Gohu GohuFont:size=10
+!urxvt*.font: xft:InputMonoCondensed:size=10
+!urxvt*.font: xft:Spleen 8x16
+!! Tier A:
+!urxvt*.font: xft:Cozette:size=13
+!urxvt*.font: xft:Dina:size=10
+!urxvt*.font: xft:Iosevka:size=10
+!! Tier B:
+!urxvt*.font: xft:Envy Code R:size=10
+!urxvt*.font: xft:D2Coding:size=10
+!urxvt*.font: xft:Fira Code:size=10
+!urxvt*.font: xft:Hack:size=10
+!! Tier C: ( minimal unicode ;-; )
+!urxvt*.font: xft:M+ 1m:size=10
+!urxvt*.font: xft:Hasklig:size=10
+
+!! X terminal colorscheme(s):
+!! scheme: candymouse
+*cursorColor: #A488D9
+*background:  #121212
+*foreground:  #B2B2B2
+!! black:
+*color0:  #222222
+*color8:  #3D3A3A
+!! red:
+*color1:  #E71594
+*color9:  #FF0068
+!! green:
+*color2:  #00BCA5
+*color10: #25E2CB
+!! yellow:
+*color3:  #D4C141
+*color11: #E7E615
+!! blue:
+*color4:  #68AFF7
+*color12: #138BCF
+!! magenta:
+*color5:  #AD73F9
+*color13: #6B3BAA
+!! cyan: (purple instead)
+*color6:  #6A4E6E
+*color14: #B161BA
+!! white:
+*color7:  #8D8D8D
+*color15: #DAD3D3
+!! bold:
+!*colorBD: #808080
+!! italics:
+*colorIT: #707070
+!! underline:
+!*colorUL: #606060
+
+!! X cursor parameters:
+!Xcursor.theme:  Vanilla-DMZ
+!Xcursor.size:   8

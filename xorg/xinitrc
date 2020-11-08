@@ -1,0 +1,23 @@
+#! /bin/zsh
+##############################################
+## locate: ${XDG_CONFIG_HOME}/xorg/xinitrc  ##
+## author: Vincent (github.com/mother-1)    ##
+## detail: X.Org init configuration file    ##
+##############################################
+
+## RESOURCE:
+/usr/bin/xrdb -load ${XDG_CONFIG_HOME:-$HOME}/xorg/Xresources
+
+## INPUT:
+#/usr/bin/xmodmap ${XDG_CONFIG_HOME:-$HOME}/keymaps/zsu.xmodmap
+/usr/bin/xmodmap ${XDG_CONFIG_HOME:-$HOME}/keymaps/overlay.xmodmap
+/usr/local/bin/zaprat --disable
+
+## DISPLAY:
+/usr/bin/xsetroot -cursor_name left_ptr -solid '#101010'
+/usr/bin/display -window root -resize 1366x768! ${XDG_PUBLICSHARE_DIR}/images/glitch2.png &> /dev/null
+
+## WINDOW MANAGER:
+/usr/bin/sxhkd -c ${XDG_CONFIG_HOME:-$HOME}/herbstluftwm/sxhkdrc &
+exec ${XDG_CONFIG_HOME:-$HOME}/herbstluftwm/panel/dzen-init.zsh &> /dev/null &
+exec /usr/bin/herbstluftwm --locked -c ${XDG_CONFIG_HOME:-$HOME}/herbstluftwm/autostart
