@@ -1,0 +1,36 @@
+loadplugins '\.(js|penta)$'
+group user
+colorscheme cottonmouse
+
+nmap B :bmarks<CR>
+nmap D :downloads<CR>
+nmap X :stopall<CR>
+nmap x :stop<CR>
+nmap -builtin <C-m> :messclear<CR>
+
+set cdpath=''
+set autocomplete=/ex/(history|bmarks),.?
+" set autocomplete=/ex/(history|bmarks),^(/|/ex/?)$
+set complete=search,location,file
+set editor='st -e vim'
+set findcase=smart
+set followhints=1
+set guioptions=CsB
+set hintkeys=1234098
+" set hintkeys=asdfelkji
+set history=50
+set hlfind
+set maxitems=9
+set messages=9
+set noincfind
+set showtabline=never
+set scrollsteps=1
+set scrolltime=0
+set strictfocus=*:moderate
+" set strictfocus=google.com:despotic,ebay.com:despotic
+set defsearch=gg
+set suggestengines=
+set wildcase=.?:smart
+set wildmode=list:full
+
+" vim: set ft=pentadactyl:

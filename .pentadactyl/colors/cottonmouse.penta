@@ -1,0 +1,69 @@
+""""""""""""""""""""""""""""""""""""""""""""""
+"" scheme: cottonmouse                      ""
+"" author: Vincent (github.com/milomouse)   ""
+"" detail: a muted pentadactyl color scheme ""
+""""""""""""""""""""""""""""""""""""""""""""""
+
+highlight -link=FontFixed CmdLine color: #b2b2b2 ; font: normal 10px "Dina" !important ; font-weight: normal !important ;
+highlight -link=FontFixed,Normal Comp margin:0 ; font: normal 10px "Dina" !important ;
+highlight -link=FontFixed StatusLine background: transparent ; -moz-appearance: none !important ;
+highlight Bell display: none ;
+highlight CompDesc color: inherit ; width: 50% ; padding-left: 4em ; font-size: 10px ;
+highlight CompIcon width: 10px ; min-width: 10px ; display: none ; margin-right: .5ex ;
+highlight CompItem color: #505050 ; background: inherit ; font: normal 10px "Dina" ;
+highlight CompItem[selected] color: #121212 ; background-color: #505050 ; font: normal 10px "Dina" ;
+highlight CompLess color: #707070 !important ; padding-left: 4px ; font-weight: normal ;
+highlight CompMore color: #707070 !important ; padding-left: 4px ; font-weight: normal ;
+highlight CompResult width: 40% ; padding-right: 5% ; overflow: hidden ; font: normal 10px "Dina" ;
+highlight CompTitle color: #6d4e96 ; background-color: #343434 ; font: normal 10px "Dina" ;
+highlight CompTitle>* color: #6d4e96 ; font-weight: bold ;
+highlight CompTitleSep background-color: #292929 ;
+highlight Download display: table-row ; color: inherit ; background: inherit ;
+highlight Downloads display: table ; margin: 0 ; padding: 0 ; color: #6d4e96 !important ; background-color: #292929 !important ;
+highlight Download[active] color: #505050 !important ; background-color: #292929 ; font-weight: bold !important ;
+highlight DownloadButtons color: inherit ; background: inherit ;
+highlight DownloadCell display: table-cell ; width: 100% ; padding: .2ex .2ex .2ex .2ex ; color: inherit ; background: inherit ;
+highlight DownloadHead display: table-row ; color: inherit ; background-color: #343434 ;
+highlight DownloadPercent color: #707070 !important ; background: inherit ;
+highlight DownloadProgress color: #505050 !important ; background: inherit ;
+highlight DownloadProgressHave color: inherit ; background: inherit ;
+highlight DownloadProgressTotal color: inherit ; background: inherit ;
+highlight DownloadSource color: #138bcf !important ; background: inherit ;
+highlight DownloadState color: #505050 !important ; background: inherit ;
+highlight DownloadTime color: #505050 !important ; background: inherit ;
+highlight DownloadTitle color: #707070 !important ; background: inherit ; font-weight: bold ;
+highlight DownloadTitle>Link>a max-width: 48ex ; overflow: hidden ; display: inline-block ; color: #707070 !important ; background-color: #292929 ;
+highlight ErrorMsg color: inherit ; background: inherit ;
+highlight Filter font-weight: bold ; color: #707070 !important ;
+highlight Find color: #121212 !important ; background-color: #ad73f9 !important ;
+highlight FrameIndicator background-color: #292929 ; opacity: .6 ; z-index: 999 ; position: fixed ; top: 0 ; bottom: 0 ; left: 0 ; right: 0;
+highlight Function color: #138bcf ; background: inherit ;
+highlight Hint font: bold 14px "Dina" !important ; color: #121212 !important ; background-color: #ad73f9 ; text-transform: uppercase ; margin: -.6ex ; padding: 2px 2px 2px 2px ; outline: 0px ;
+highlight HintActive color: #121212 !important ; background-color: #00ffee !important ;
+highlight HintElem color: #121212 !important ; background-color: #ff0066 !important ;
+highlight HintImage opacity: .6 !important ;
+highlight Indicator color: #707070 ; width: 6px ; padding-right: 6px ; text-align: center ; font-weight: normal ;
+highlight InfoMsg color: inherit ; background: inherit ; font: normal 10px "Dina" ;
+highlight Keyword color: #138bcf !important ; background: inherit ;
+highlight LineNr color: inherit ; background: inherit ;
+highlight Message white-space: normal ; min-width: 100% ; width: 100% ; padding-left: 2em ; text-indent: -2em ; display: block ; color: inherit ; background: inherit ; font: bold 10px "Dina" ;
+highlight ModeMsg color: inherit ; background: inherit ; font-weight: bold ;
+highlight MoreMsg color: inherit ; background: inherit ;
+highlight NonText color: #e3e3e3 ; background: transparent ; min-height: 16px ; padding-left: 2px ;
+highlight Normal color: #e3e3e3 ; background-color: #292929 ; font: normal 10px "Dina" ;
+highlight Object color: #138bcf ; background: inherit ;
+highlight Question color: inherit ; background: inherit ; font-weight: bold ;
+highlight Search color: #292929 !important ; background-color: #ff0066 !important ;
+highlight StatusLine font: normal 10px "Dina" !important ; font-weight: bold !important ; padding-right: 6px !important ; padding-left: 6px !important ;
+highlight StatusLineBroken color: #121212 !important ; background-color: #ff0066 !important ;
+highlight StatusLineExtended color: #292929 !important ; background-color: #14ada3 !important ;
+highlight StatusLineNormal color: #707070 !important ; background-color: #292929 !important ;
+highlight StatusLineSecure color: #292929 !important ; background-color: #138bcf !important ;
+highlight StatusQuestion color: #121212 ; background: inherit ; font-weight: bold ;
+highlight StatusWarningMsg color: #121212 ; background: inherit ;
+highlight Tag color: inherit ; background: inherit ;
+highlight Title color: inherit ; background: inherit ;
+highlight URL text-decoration: none ; color: inherit ; background: inherit ;
+highlight WarningMsg color: #ff0066 ; background: inherit ;
+
+" vim: set ft=pentadactyl:
