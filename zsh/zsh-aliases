@@ -1,0 +1,39 @@
+################################################
+## locate: ${XDG_CONFIG_HOME}/zsh/zsh-aliases ##
+## detail: configuration file for zsh aliases ##
+################################################
+
+# file management:
+alias ls="/bin/ls -h --file-type --time-style='+%y-%m-%d %H%M%S' --color=auto --group-directories-first"
+alias la="ls -A"
+alias lb="ls -Ssr"
+alias lt="ls -tr"
+alias lm="lt -c"
+alias lx="ls -X"
+alias lls="ls -l"
+alias lla="lls -A"
+alias llb="lls -Ssr"
+alias llt="lls -tr"
+alias llm="llt -c"
+alias llx="lx -l"
+alias gh="cd ${H:-/home/base-${USER}}"
+
+# trivial quick views/edits:
+alias zedit="${EDITOR:-/usr/bin/vim} ${HOME}/{.zshrc,zsh/zsh-{functions,aliases,options,exports}}"
+alias xload="xrdb -load ${XDG_CONFIG_DIR:-${HOME}}/xorg/Xresources &>/dev/null"
+
+# program masquing:
+alias diff="colordiff"
+alias info="info --vi-keys"
+alias grep="grep --color=auto"
+alias mpq="mpv -really-quiet"
+alias mupdf="mupdf -I"
+alias sxiv="sxiv -ab"
+#alias remote="transmission-remote-cli"
+
+# system/media shortcuts:
+alias psu="ps --deselect -U root -j f"
+alias psr="ps -U root -j f"
+alias psa="ps fax -j"
+alias loadavg='print - ${$(</proc/loadavg)[1,3]}'
+alias vifi='vim $(fzf)'

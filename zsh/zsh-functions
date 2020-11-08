@@ -1,0 +1,72 @@
+##################################################
+## locate: ${XDG_CONFIG_HOME}/zsh/zsh-functions ##
+## detail: configuration file for zsh functions ##
+##################################################
+
+# use history, but skip certain cmds/args from being written:
+function zshaddhistory {
+  local line cmd
+  line=${1%%$'\n'} ; cmd=${line%% *}
+  [[ ${#line} -ge 5
+      && ${cmd} != (history|fc|[zx]edit|[zx]load)
+  ]] && (( ! $argv[(I)*unrl/*|*spar/*|mpq *] ))
+}
+
+# safely recompile and reload shell settings:
+function zload {
+  source /etc/profile &>/dev/null
+  autoload -U zrecompile
+  [[ -f ~/.zshrc ]] && zrecompile -p ~/.zshrc
+  [[ -f ~/.zcompdump ]] && zrecompile -p ~/.zcompdump
+  [[ -f ~/.zshrc.zwc.old ]] && rm -f ~/.zshrc.zwc.old
+  [[ -f ~/.zcompdump.zwc.old ]] && rm -f ~/.zcompdump.zwc.old
+  source ~/.zshrc
+}
+
+# jump to previous directory by integer or reg-exp, also list dirs,
+# else jump to last visited directory if no argument supplied:
+# NOTE: prefer ZSH directory stack ( cd [-|+]^Tab ) but will use sometimes
+function back {
+  if [[ $# == 1 ]]; then
+    case $1 {
+      <->)  pushd -q +$1 >& - ;;
+      --)   dirs -lpv|sed '2s|$| \[last\]|' ;;
+      *)    [[ -n $(dirs -lpv|grep -i $1|grep -v ${PWD}) ]] && \
+              pushd -q +${$(dirs -lpv|grep -i $1|grep -v ${PWD})[1]}
+    }
+  else pushd -q - >& - ; fi
+}
+
+# go up Nth amount of directories:
+# a bit quicker than ../../.. -- native alternatives?
+function up {
+  local arg=${1:-1};
+  while [ ${arg} -gt 0 ]; do
+    cd .. >& -;
+    arg=$((${arg} - 1));
+  done
+}
+
+# quickly view the Linux kernel 'if-tainted' information:
+function iftainted() {
+  case $(</proc/sys/kernel/tainted) {
+    1) print "1: A module with a non-GPL license has been loaded, this includes modules with no license." ;;
+    2) print "2: A module was force loaded by insmod -f." ;;
+    4) print "4: Unsafe SMP processors: SMP with CPUs not designed for SMP." ;;
+    8) print "8: A module was forcibly unloaded from the system by rmmod -f." ;;
+    16) print "16: A hardware machine check error occurred on the system." ;;
+    32) print "32: A bad page was discovered on the system." ;;
+    64) print "64: The user has asked that the system be marked tainted." ;;
+    128) print "128: The system has died." ;;
+    256) print "256: The ACPI DSDT has been overridden with one supplied by the user instead of using the one provided by the hardware." ;;
+    512) print "512: A kernel warning has occurred." ;;
+    1024) print "1024: A module from drivers/staging was loaded." ;;
+    *) print "Kernel does not appear to be tainted, or unknown." ;;
+};}
+
+# one-liners/micro functions:
+function startx { [[ ${+DISPLAY} -eq 1 ]] || /usr/bin/xinit ${XDG_CONFIG_DIR:-$HOME}/xorg/xinitrc -auth ${XDG_CONFIG_DIR:-$HOME}/xorg/.serverauth.${RANDOM[1,4]} -nolisten tcp -once -retro &>!${XDG_CONFIR_DIR:-$HOME}/xorg/log }
+function mkcd { command mkdir -p "$@" && cd "$@" }
+function dropcache { sync && command su -s /bin/zsh -c 'echo 3 > /proc/sys/vm/drop_caches' root }
+#function flashproc { for f (${$(file /proc/$(pidof dwb)/fd/*|gawk '/\/tmp\/Flash/ { print $1}')//:}){ print - "$f" }} # no more flash but keep just in case
+#function hc { command herbstclient "$@" }
