@@ -15,7 +15,8 @@
 
 ## DISPLAY:
 /usr/bin/xsetroot -cursor_name left_ptr -solid '#101010'
-/usr/bin/display -window root -resize 1366x768! ${XDG_PUBLICSHARE_DIR}/images/glitch2.png &> /dev/null
+#/usr/bin/display -window root -resize 1366x768! ${XDG_PUBLICSHARE_DIR}/images/glitch2.png &> /dev/null
+/usr/bin/display -window root -resize 1366x768! ${XDG_PUBLICSHARE_DIR}/images/void2.png &> /dev/null
 
 ## WINDOW MANAGER:
 /usr/bin/sxhkd -c ${XDG_CONFIG_HOME:-$HOME}/herbstluftwm/sxhkdrc &
