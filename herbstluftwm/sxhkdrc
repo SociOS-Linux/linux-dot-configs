@@ -89,11 +89,11 @@ mod1 + {_,shift +} f
 mod1 + shift + s
     pkill -USR1 -x sxhkd
 
-#+ spawn rxvt-unicode with tmux
+#+ spawn terminal with tmux
 mod1 + Return
     st -e tmux
 
-#+ spawn rxvt-unicode
+#+ spawn terminal
 mod1 + shift + Return
     st
 
@@ -110,7 +110,7 @@ mod1 + shift + w
 
 #+ rotation of primary/clipboard selections
 mod1 + y
-    /home/base-h/code/sh/clipswap
+    /usr/local/bin/clipswap
 
 #+ yank image snapshot of current tag
 mod1 + shift + y
