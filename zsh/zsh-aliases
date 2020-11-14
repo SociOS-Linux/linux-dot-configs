@@ -29,6 +29,7 @@ alias grep="grep --color=auto"
 alias mpq="mpv -really-quiet"
 alias mupdf="mupdf -I"
 alias sxiv="sxiv -ab"
+alias lynx="lynx -vikeys -tna -force_secure -accept_all_cookies -cookie_file='/tmp/lynx_cookies' -short_url -show_rate -telnet -lss='~/lynx/lynx.lss'"
 #alias remote="transmission-remote-cli"
 
 # system/media shortcuts:
