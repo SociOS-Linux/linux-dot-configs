@@ -173,9 +173,10 @@ autocmd FileType ruby     setlocal expandtab shiftwidth=2 softtabstop=2 tabstop&
 autocmd FileType sh,zsh   setlocal expandtab shiftwidth=2 softtabstop=2 tabstop&
 autocmd FileType vim      setlocal expandtab shiftwidth=2 softtabstop=2 tabstop&
 "" [unregistered Filename/Extension; assign Syntax]
-autocmd BufNewFile,BufRead vifmrc   set syntax=vim
-autocmd BufNewFile,BufRead .pentadactylrc   set syntax=vim
+autocmd BufNewFile,BufRead vifmrc set syntax=vim
+autocmd BufNewFile,BufRead .pentadactylrc set syntax=vim
 autocmd BufNewFile,BufRead *.zsh set syntax=zsh
+autocmd BufNewFile,BufRead *.rasi set syntax=config
 "" [unregistered Filename/Extension; assign FileType]
 "autocmd BufNewFile,BufRead *.twig set filetype=html
 
