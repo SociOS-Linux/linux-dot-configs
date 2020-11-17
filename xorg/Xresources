@@ -2,7 +2,6 @@
 !# locate: ${XDG_CONFIG_HOME}/xorg/Xdefaults #!
 !# author: Vincent (github.com/mother-1)     #!
 !# detail: X.Org and X terminal parameters   #!
-!# notice: `st' does not use this by default #!
 !#############################################!
 
 !! urxvt general settings:
