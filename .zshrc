@@ -5,23 +5,37 @@
 #######################################################
 
 # source external configuration files:
-for i in ${HOME}/zsh/zsh-{options,exports,aliases,functions}; do
-  if [[ -f $i ]] { . $i } else { print "Cannot find file: $i" }
+for i in ${HOME}/zsh/zsh-{options,exports,aliases,functions} /usr/share/fzf/key-bindings.zsh ; do
+  if [[ -f $i ]] { source $i } else { print "Cannot find file: $i" }
 done
-[[ -f /usr/share/fzf/key-bindings.zsh ]] && . /usr/share/fzf/key-bindings.zsh
 
 # prompt line:
-[[ ${TERM} =~ screen ]] && precmd() { print -Pn "\e]2;%2d\a" } #|| RPROMPT='%F{white}%~%f'
-PS1='%(1j.%B%F{black}%j .)%(0?..%B%F{red}%? )%B%F{blue}ratbyte%b%F{red}%#%b%f '
-PS2='%B%F{black}> %b%f'
+[[ ${TERM} =~ screen ]] && precmd() { print -Pn "\e]2;%2d\a" }
+function zle-keymap-select zle-line-init zle-line-finish
+{
+  if [[ $KEYMAP == (viins|main) ]] ; then
+    _VP1="{magenta}ratbyte%b%F{green}"
+    _VP2="{green}"
+  else
+    _VP1="{black}ratbyte%b%F{white}"
+    _VP2="{black}"
+  fi
+  zle reset-prompt
+  zle -R
+}
+PS1='%(1j.%B%F{black}%j .)%(0?..%B%F{red}%? )%B%F${_VP1}%#%b%f '
+PS2='%B%F${_VP2}> %b%f'
 PS3='%B%F{white}?# %b%f%F{red}%# %f'
 PS4='%B%F{white}%_ %b%f%F{magenta}%# %f%B%F{white}+%N:%i %b%f%F{magenta}%# %f'
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
 
 # auto-completion:
 autoload -U compinit
 compinit
 _force_rehash() { (( CURRENT == 1 )) && rehash ; return 1 }
-zstyle ':completion:::::' completer _force_rehash _expand _complete _approximate 
+zstyle ':completion:::::' completer _force_rehash _expand _complete _approximate
 zstyle ':completion:*:descriptions' format "- %d -"
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*:manuals' separate-sections true
@@ -54,7 +68,7 @@ eval $(dircolors -b ${HOME}/.dir_colors)
 
 # Fish-like syntax highlighting for ZSH:
 if [[ -f $HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-  . $HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source $HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
   # activate highlighters:
   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
@@ -108,8 +122,9 @@ fi
 
 # Fish-like history sub-string search for ZSH (load AFTER syntax):
 if [[ -f $HOME/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
-  . $HOME/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+  source $HOME/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+  # override main colors:
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=white,fg=black,bold'
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=black'
   HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS='i'
