@@ -150,3 +150,5 @@ bindkey "^[[4~" end-of-line
 bindkey "^[[8~" end-of-line
 bindkey "^?" backward-delete-char
 bindkey '^R' history-incremental-search-backward
+bindkey -M vicmd '^U' vi-kill-line
+bindkey -M viins '^U' kill-whole-line
