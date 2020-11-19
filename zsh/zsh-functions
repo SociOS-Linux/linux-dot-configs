@@ -48,7 +48,7 @@ function up {
 }
 
 # quickly view the Linux kernel 'if-tainted' information:
-function iftainted() {
+function iftainted {
   case $(</proc/sys/kernel/tainted) {
     1) print "1: A module with a non-GPL license has been loaded, this includes modules with no license." ;;
     2) print "2: A module was force loaded by insmod -f." ;;
