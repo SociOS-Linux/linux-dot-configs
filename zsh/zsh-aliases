@@ -36,5 +36,6 @@ alias lynx="lynx -vikeys -tna -force_secure -accept_all_cookies -cookie_file='/t
 alias psu="ps --deselect -U root -j f"
 alias psr="ps -U root -j f"
 alias psa="ps fax -j"
+alias psp="ps --no-headers -Leo user | sort | uniq --count"
 alias loadavg='print - ${$(</proc/loadavg)[1,3]}'
 alias vifi='vim $(fzf)'
