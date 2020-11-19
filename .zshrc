@@ -112,11 +112,11 @@ if [[ -f $HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
   #ZSH_HIGHLIGHT_STYLES[bracket-level-5]='fg=blue,bold'
   #ZSH_HIGHLIGHT_STYLES[bracket-level-6]='fg=green,bold'
 
-  # override pattern colors:
-  ZSH_HIGHLIGHT_PATTERNS+=('rm -[f,r] *' 'fg=red,bold,standout')
-  ZSH_HIGHLIGHT_PATTERNS+=('rm -[f,r][f,r] *' 'fg=red,bold,standout')
-  ZSH_HIGHLIGHT_PATTERNS+=('sudo dd *' 'fg=magenta,bold,standout')
-  ZSH_HIGHLIGHT_PATTERNS+=('sudo shred *' 'fg=magenta,bold,standout')
+  # override pattern decorations:
+  ZSH_HIGHLIGHT_PATTERNS+=('rm -[f,r] *' 'fg=bold,standout')
+  ZSH_HIGHLIGHT_PATTERNS+=('rm -[f,r][f,r] *' 'fg=bold,standout')
+  ZSH_HIGHLIGHT_PATTERNS+=('sudo dd *' 'fg=bold,standout')
+  ZSH_HIGHLIGHT_PATTERNS+=('shred *' 'fg=bold,standout')
 
 fi
 
