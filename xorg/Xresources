@@ -65,7 +65,7 @@ urxvt*.font: xft:Gohu GohuFont:size=10
 *color13: #6B3BAA
 !! cyan: (purple instead)
 *color6:  #6A4E6E
-*color14: #B161BA
+*color14: #8F1E9C
 !! white:
 *color7:  #8D8D8D
 *color15: #DAD3D3
