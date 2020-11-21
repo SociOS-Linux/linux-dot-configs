@@ -17,7 +17,7 @@ function zle-keymap-select zle-line-init zle-line-finish
     _VP1="{magenta}ratbyte%b%F{green}"
     _VP2="{green}"
   else
-    _VP1="{black}ratbyte%b%F{white}"
+    _VP1="{black}ratbyte%b%F{red}"
     _VP2="{black}"
   fi
   zle reset-prompt
@@ -78,10 +78,10 @@ if [[ -f $HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
   ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red,bold'
   ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=blue,bold'
   ZSH_HIGHLIGHT_STYLES[assign]='fg=yellow,bold'
-  ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta'
-  ZSH_HIGHLIGHT_STYLES[function]='fg=magenta'
-  ZSH_HIGHLIGHT_STYLES[builtin]='fg=magenta,bold'
-  ZSH_HIGHLIGHT_STYLES[command]='fg=magenta,bold'
+  ZSH_HIGHLIGHT_STYLES[alias]='fg=white'
+  ZSH_HIGHLIGHT_STYLES[function]='fg=white'
+  ZSH_HIGHLIGHT_STYLES[builtin]='fg=magenta'
+  ZSH_HIGHLIGHT_STYLES[command]='fg=magenta'
   ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=red,bold,standout'
   ZSH_HIGHLIGHT_STYLES[path]='fg=white,underline'
   ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=white,underline'
@@ -97,20 +97,20 @@ if [[ -f $HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
 
   # override bracket colors:
   ZSH_HIGHLIGHT_STYLES[bracket-error]='fg=red,bold'
-  # uniform / less distracting:
-  ZSH_HIGHLIGHT_STYLES[bracket-level-1]='fg=magenta,bold'
-  ZSH_HIGHLIGHT_STYLES[bracket-level-2]='fg=magenta'
-  ZSH_HIGHLIGHT_STYLES[bracket-level-3]='fg=magenta,bold'
-  ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=magenta'
-  ZSH_HIGHLIGHT_STYLES[bracket-level-5]='fg=magenta,bold'
-  ZSH_HIGHLIGHT_STYLES[bracket-level-6]='fg=magenta'
-  # colorful / distracting:
-  #ZSH_HIGHLIGHT_STYLES[bracket-level-1]='fg=magenta,bold'
-  #ZSH_HIGHLIGHT_STYLES[bracket-level-2]='fg=blue,bold'
-  #ZSH_HIGHLIGHT_STYLES[bracket-level-3]='fg=green,bold'
-  #ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=magenta,bold'
-  #ZSH_HIGHLIGHT_STYLES[bracket-level-5]='fg=blue,bold'
-  #ZSH_HIGHLIGHT_STYLES[bracket-level-6]='fg=green,bold'
+  # # uniform / less distracting:
+  # ZSH_HIGHLIGHT_STYLES[bracket-level-1]='fg=magenta,bold'
+  # ZSH_HIGHLIGHT_STYLES[bracket-level-2]='fg=magenta'
+  # ZSH_HIGHLIGHT_STYLES[bracket-level-3]='fg=magenta,bold'
+  # ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=magenta'
+  # ZSH_HIGHLIGHT_STYLES[bracket-level-5]='fg=magenta,bold'
+  # ZSH_HIGHLIGHT_STYLES[bracket-level-6]='fg=magenta'
+  # colorful / slightly distracting:
+  ZSH_HIGHLIGHT_STYLES[bracket-level-1]='fg=green,bold'
+  ZSH_HIGHLIGHT_STYLES[bracket-level-2]='fg=white,bold'
+  ZSH_HIGHLIGHT_STYLES[bracket-level-3]='fg=blue,bold'
+  ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=green,bold'
+  ZSH_HIGHLIGHT_STYLES[bracket-level-5]='fg=white,bold'
+  ZSH_HIGHLIGHT_STYLES[bracket-level-6]='fg=blue,bold'
 
   # override pattern decorations:
   ZSH_HIGHLIGHT_PATTERNS+=('rm -[f,r] *' 'fg=bold,standout')
