@@ -4,7 +4,7 @@ Current Setup:
 
 + *DISTRO* = Gentoo ( ~amd64 nomultilib )
 
-+ *KERNEL* = GNU/Linux 5.9.9 ( CK/MuQSS, GCC -03, full built-in, etc. )
++ *KERNEL* = GNU/Linux 5.9.10 ( CK/MuQSS, GCC -03, full built-in, etc. )
 
 + *INIT* = OpenRC ( sysvinit )
 
