@@ -43,12 +43,12 @@ export FZF_DEFAULT_OPTS='--color=fg:#444444,bg:-1,hl:#655969,fg+:#AF00D7,bg+:#1C
 --color=info:#949494,prompt:#8D8D8D,pointer:#138BCF,marker:#FF009A,spinner:#B2B2B2,header:#FF009A'
 
 # variables:
-export HISTSIZE=1000
-export SAVEHIST=1000
+export HISTSIZE=2000
+export SAVEHIST=2000
 export DIRSTACKSIZE=20
 #export GPG_TTY="$(tty)"
 #export http_proxy=http://127.0.0.1:3128
-#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export LESSCHARSET="UTF-8"
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[00;35m'
