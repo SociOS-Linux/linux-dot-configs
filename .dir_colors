@@ -275,7 +275,7 @@ EXEC           01;32
 .lesshst       00;37
 .log           01;37
 .lua           00;35
-.mailcap       01;31
+.mailcap       00;37
 *Makefile      00;31
 .map           01;32
 .markdown      01;32
@@ -286,6 +286,7 @@ EXEC           01;32
 .muttrc        01;35
 .nfo           01;37
 .netrc         00;35
+.npmrc         00;31
 .o             00;34
 .offlineimaprc 01;35
 .opt           00;36
@@ -299,6 +300,8 @@ EXEC           01;32
 .pod           01;32
 .py            00;35
 .R             00;35
+.Renviron      00;31
+.Rprofile      00;31
 .ratpoisonrc   01;35
 .rb            00;35
 .rc            01;35
