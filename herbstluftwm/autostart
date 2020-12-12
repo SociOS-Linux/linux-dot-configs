@@ -80,7 +80,8 @@ hc rule focus=on
 hc rule class="mpv" pseudotile=on
 hc rule class="Toplevel" pseudotile=on
 hc rule class="Dialog" pseudotile=on
-hc rule class="forge-view-Main" tag=II
+hc rule class="sun-awt-X11-XFramePeer" pseudotile=on
+hc rule class="forge-view-Main" tag=III
 hc rule class~'(.*[iI]ce[cC]at)' tag=IV
 hc rule class~'(.*[pP]ale moon)' tag=IV
 hc rule class~'(.*[tT]ixati)' tag=IV
@@ -95,6 +96,8 @@ hc rule title="Tab Mix Plus Options" pseudotile=on
 hc rule title="Loading Tixati..." pseudotile=on
 hc rule title="Loading Forge..." pseudotile=on
 hc rule title~'(.*Pale Moon.*)' pseudotile=on
+hc rule title~'^TLauncher.*' pseudotile=on tag=III
+hc rule title~'^TL .*[.*-launcher.*].*' tag=III
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
