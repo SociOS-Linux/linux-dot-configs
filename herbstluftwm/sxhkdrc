@@ -101,6 +101,10 @@ mod1 + shift + Return
 mod1 + {e,g}
     rofi -show {run,window}
 
+#+ refresh current window
+mod1 + b
+    xrefresh
+
 #+ if found focus on existing browser instance else execute (secondary)
 mod1 + w
     /bin/zsh -c 'if [[ -n $(pidof palemoon) ]] ; then if [[ ${$(herbstclient stack)[7]} != "IV" ]] ; then herbstclient use IV ; fi ; else exec palemoon ; fi'
