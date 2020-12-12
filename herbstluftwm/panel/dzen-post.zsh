@@ -35,7 +35,13 @@ width='740'
             }
             tags=("${tags/$i/${c_fg}${i#[[:graph:]]}^fg(#696969)${_N}}")
           ;;
-          '!') tags=("${tags/$i/${c_01}${i#[[:graph:]]} }") ;;
+          '!')
+            if [[ ${+_n} -eq 1 ]] ; then
+              tags=("${tags/$i/${c_02}${i#[[:graph:]]}^fg(#696969)${_N}}")
+            else
+              tags=("${tags/$i/${c_02}${i#[[:graph:]]} }")
+            fi
+          ;;
           *)   tags=("${tags/$i/^fg(#707070)${i#[[:graph:]]} }") ;;
         }
       }
