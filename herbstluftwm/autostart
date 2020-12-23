@@ -82,6 +82,7 @@ hc rule class="Toplevel" pseudotile=on
 hc rule class="Dialog" pseudotile=on
 hc rule class="sun-awt-X11-XFramePeer" pseudotile=on
 hc rule class="forge-view-Main" tag=III
+hc rule class="calibre" tag=V
 hc rule class~'(.*[iI]ce[cC]at)' tag=IV
 hc rule class~'(.*[pP]ale moon)' tag=IV
 hc rule class~'(.*[tT]ixati)' tag=IV
