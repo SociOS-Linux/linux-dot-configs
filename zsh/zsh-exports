@@ -19,6 +19,7 @@ export XDG_DOWNLOAD_DIR="${H}/down"
 export XDG_MUSIC_DIR="${H}/muzk"
 export XDG_PICTURES_DIR="${H}/foto"
 export XDG_PUBLICSHARE_DIR="${XDG_CONFIG_HOME}/share"
+export XDG_RUNTIME_DIR="/tmp/runtime-${USER}"
 export XDG_TEMPLATES_DIR="${XDG_DATA_HOME}/templates-${USER}"
 export XDG_VIDEOS_DIR="${H}/vide"
 export GOPATH="${H}/code/go"
@@ -58,6 +59,7 @@ export LESS_TERMCAP_so=$'\E[00;47;30m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[00;34m'
 export GREP_COLORS="mt=01;32:sl=00;35"
+export CALIBRE_USE_DARK_PALETTE=1
 
 # fallback:
 #if [[ ${+TERMINAL} == 0 ]] ; then
