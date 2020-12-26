@@ -107,10 +107,10 @@ mod1 + b
 
 #+ if found focus on existing browser instance else execute (secondary)
 mod1 + w
-    /bin/zsh -c 'if [[ -n $(pidof palemoon) ]] ; then if [[ ${$(herbstclient stack)[7]} != "IV" ]] ; then herbstclient use IV ; fi ; else exec palemoon ; fi'
+    /bin/zsh -c 'if [[ -n $(pidof firefox-bin) ]] ; then if [[ ${$(herbstclient stack)[7]} != "IV" ]] ; then herbstclient use IV ; fi ; else exec firefox-bin ; fi'
 
 mod1 + shift + w
-    /bin/zsh -c 'if [[ -n $(pidof icecat) ]] ; then if [[ ${$(herbstclient stack)[7]} != "IV" ]] ; then herbstclient use IV ; fi ; else exec icecat ; fi'
+    /bin/zsh -c 'if [[ -n $(pidof palemoon) ]] ; then if [[ ${$(herbstclient stack)[7]} != "IV" ]] ; then herbstclient use IV ; fi ; else exec palemoon ; fi'
 
 #+ rotation of primary/clipboard selections
 mod1 + y

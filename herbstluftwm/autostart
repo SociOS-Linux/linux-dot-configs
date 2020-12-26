@@ -85,6 +85,8 @@ hc rule class="forge-view-Main" tag=III
 hc rule class="calibre" tag=V
 hc rule class~'(.*[iI]ce[cC]at)' tag=IV
 hc rule class~'(.*[pP]ale moon)' tag=IV
+hc rule class~'(.*[fF]irefox)' tag=IV
+hc rule class~'(.*[nN]avigator)' tag=IV
 hc rule class~'(.*[tT]ixati)' tag=IV
 hc rule class~'(.*[gG]imp)' tag=V
 hc rule class~'(.*[gG]color2)' pseudotile=on
